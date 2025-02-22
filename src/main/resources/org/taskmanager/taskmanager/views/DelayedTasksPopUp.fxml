@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.taskmanager.taskmanager.controller.DelayedTaskPopUpController"
+      spacing="15" alignment="CENTER"
+      style="-fx-background-color: #E1BEE7; -fx-padding: 15;"> <!-- Light purple background -->
+
+    <!-- Shows the number of delayed tasks to the user. -->
+    <Label text="Delayed Tasks: "/>
+    <Label fx:id="delayedTasksCount" style="-fx-text-fill: black;"/>
+
+    <!-- Shows the delayed tasks to the user. -->
+    <ListView fx:id="delayedTasksView" prefHeight="200.0" prefWidth="300.0"
+              style="-fx-background-color: #D1C4E9; -fx-border-color: #B39DDB; -fx-border-radius: 5; -fx-font-size: 14px;"/>
+
+    <Button text="Ok" onAction="#onClose"
+            style="-fx-background-color: #9575CD; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5;"/>
+</VBox>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.taskmanager.taskmanager.controller.SearchController"
+      spacing="10"
+      style="-fx-background-color: #FCE4EC; -fx-padding: 15;"> <!-- Light pink background -->
+
+    <Label text="Search Window" style="-fx-text-fill: black; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Input elements and buttons -->
+    <Label text="Search Tasks by Name:" style="-fx-text-fill: black; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <TextField fx:id="searchNameField" promptText="Search tasks by name"
+               style="-fx-background-color: #F8BBD0; -fx-border-color: #F48FB1; -fx-border-radius: 5;"
+               maxWidth="300"/>
+
+    <Label text="Search Tasks by Category:" style="-fx-text-fill: black; -fx-font-weight: bold;"/>
+    <ComboBox fx:id="searchCategoryComboBox" promptText="Select Category"
+              style="-fx-background-color: #F8BBD0; -fx-border-color: #F48FB1; -fx-border-radius: 5;"/>
+
+    <Label text="Search Tasks by Priority:" style="-fx-text-fill: black; -fx-font-weight: bold;"/>
+    <ComboBox fx:id="searchPriorityComboBox" promptText="Select Priority"
+              style="-fx-background-color: #F8BBD0; -fx-border-color: #F48FB1; -fx-border-radius: 5;"/>
+
+    <Button text="Search" onAction="#searchTasks"
+            style="-fx-background-color: #F06292; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5;"/>
+
+    <!-- Table that shows the results of the search to the user. -->
+    <TableView fx:id="searchResultsTable" prefHeight="300" styleClass="table-view"
+               style="-fx-background-color: #F8BBD0; -fx-border-color: #F48FB1; -fx-border-radius: 5;"
+                maxWidth="800" maxHeight="400">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Task Name" prefWidth="200"
+                         style="-fx-text-fill: black;"/>
+            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="140"
+                         style="-fx-text-fill: black;"/>
+            <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="140"
+                         style="-fx-text-fill: black;"/>
+            <TableColumn fx:id="dueDateColumn" text="Due Date" prefWidth="85"
+                         style="-fx-text-fill: black;"/>
+        </columns>
+    </TableView>
+
+</VBox>

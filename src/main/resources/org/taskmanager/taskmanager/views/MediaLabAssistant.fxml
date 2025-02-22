@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox spacing="15" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.taskmanager.taskmanager.controller.MediaLabController"
+      style="-fx-background-color: #f4f4f4; -fx-padding: 20;">
+
+    <!-- Header Section -->
+    <HBox spacing="20" alignment="CENTER"
+          style="-fx-background-color: #2C3E50; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;">
+        <Label fx:id="totalTasksLabel" text="Total Tasks: 0" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Label fx:id="completedTasksLabel" text="Completed: 0" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Label fx:id="delayedTasksLabel" text="Delayed: 0" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Label fx:id="dueSoonTasksLabel" text="Due in 7 Days: 0" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Button Section, help with opening the different management pages of the application -->
+    <HBox spacing="10" alignment="CENTER"
+          style="-fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;">
+        <Button fx:id="ManageTasksButton" text="Manage Tasks" onAction="#goToTasksWindow"
+                style="-fx-background-color: #8E44AD; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button fx:id="ManageCategoriesButton" text="Manage Categories" onAction="#goToCategoriesWindow"
+                style="-fx-background-color: #E67E22; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button fx:id="ManagePrioritiesButton" text="Manage Priorities" onAction="#goToPrioritiesWindow"
+                style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button fx:id="searchButton" text="Search" onAction="#goToSearchWindow"
+                style="-fx-background-color: #dc95ef; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Task Table -->
+    <VBox spacing="5" style="-fx-border-color: #8E44AD; -fx-border-width: 2; -fx-background-color: #F0E6F6;
+                              -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;">
+        <Label text="Task Overview" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #8E44AD;"/>
+        <TableView fx:id="taskTable" prefHeight="300" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="taskIDColumn" text="Task ID" prefWidth="70"/>
+                <TableColumn fx:id="nameColumn" text="Task Name" prefWidth="150"/>
+                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100"/>
+                <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="87"/>
+                <TableColumn fx:id="deadlineColumn" text="Due Date" prefWidth="80"/>
+                <TableColumn fx:id="notificationNumberColumn" text="Notification Count" prefWidth="140"/>
+                <TableColumn fx:id="stateColumn" text="State" prefWidth="108"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Notification Table -->
+    <VBox spacing="5" style="-fx-border-color: #2980B9; -fx-border-width: 2; -fx-background-color: #D6EAF8;
+                              -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;">
+        <Label text="Notifications" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #2980B9;"/>
+        <TableView fx:id="notificationTable" prefHeight="300" styleClass="notification-table">
+            <columns>
+                <TableColumn fx:id="notificationIDColumn" text="Notification ID" prefWidth="110"/>
+                <TableColumn fx:id="notificationTaskIDColumn" text="Task ID" prefWidth="70"/>
+                <TableColumn fx:id="notificationTaskNameColumn" text="Task Name" prefWidth="240"/>
+                <TableColumn fx:id="notificationMessageColumn" text="Message" prefWidth="362"/>
+                <TableColumn fx:id="notificationDateColumn" text="Notification Date" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

@@ -1,0 +1,6 @@
+module:org.taskmanager.taskmanager
+org.taskmanager.taskmanager
+org.taskmanager.taskmanager.controller
+org.taskmanager.taskmanager.model
+org.taskmanager.taskmanager.repository
+org.taskmanager.taskmanager.utils

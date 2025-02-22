@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.taskmanager.taskmanager.controller.NotificationController"
+      spacing="10"
+      style="-fx-background-color: #E3F2FD; -fx-padding: 15;">
+
+    <Label text="Manage Notifications" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: black;"/>
+
+    <!-- Input elements and buttons -->
+    <VBox spacing="10">
+
+        <Label text="Task Deadline:" style="-fx-text-fill: black; -fx-font-weight: bold;"/>
+        <Label fx:id="deadlineLabel" style="-fx-text-fill: black;"/>
+
+        <Label text="Notifications already existing for this task:" style="-fx-text-fill: black; -fx-font-weight: bold;"/>
+        <Label fx:id="notificationCount" style="-fx-text-fill: black"/>
+
+        <Label text="Notification Message:" style="-fx-text-fill: black; -fx-font-weight: bold;"/>
+        <TextField fx:id="notificationField" promptText="Enter custom notification message..."
+                   style="-fx-background-color: #BBDEFB; -fx-border-color: #90CAF9; -fx-border-radius: 5;"
+                   maxWidth="500"/>
+
+        <Label text="Notification Date:" style="-fx-text-fill: black; -fx-font-weight: bold;"/>
+
+        <HBox spacing="10">
+            <ComboBox fx:id="presetComboBox" onAction="#handlePresetSelection"
+                      style="-fx-background-color: #BBDEFB; -fx-border-color: #90CAF9; -fx-border-radius: 5;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="1 Day Before"/>
+                        <String fx:value="1 Week Before"/>
+                        <String fx:value="1 Month Before"/>
+                        <String fx:value="Any"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <DatePicker fx:id="customDatePicker" promptText="Pick a custom date..." disable="true"
+                        style="-fx-background-color: #BBDEFB; -fx-border-color: #90CAF9; -fx-border-radius: 5;"/>
+            <Button fx:id="addNotificationButton" text="Add" onAction="#addNotification"
+                    style="-fx-background-color: #64B5F6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5;"/>
+            <Button fx:id="updateNotificationButton" text="Update" onAction="#updateNotification"
+                    style="-fx-background-color: #42A5F5; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5;"/>
+            <Button fx:id="deleteNotificationButton" text="Delete" onAction="#deleteNotification"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5;"/>
+        </HBox>
+
+    </VBox>
+
+    <!-- Table view for the notifications in the application -->
+    <TableView fx:id="notificationTable" prefHeight="200" styleClass="table-view"
+               style="-fx-border-color: #90CAF9; -fx-border-radius: 5;"
+               maxWidth="800"  maxHeight="400">
+        <columns>
+            <TableColumn fx:id="messageColumn" text="Notification Message" prefWidth="413"
+                         style="-fx-text-fill: black;"/>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="150"
+                         style="-fx-text-fill: black;"/>
+        </columns>
+    </TableView>
+
+</VBox>

@@ -1,0 +1,32 @@
+/*
+    This CSS file contains style elements for the table
+    in order for it to match the colour of what it represents.
+    For categories the colour is orange.
+ */
+
+.table-view .column-header {
+    -fx-background-color: orange;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #f6d18a;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: black;
+}
+
+.table-view {
+    -fx-border-radius: 8;
+}

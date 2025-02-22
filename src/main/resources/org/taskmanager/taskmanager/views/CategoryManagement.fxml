@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.taskmanager.taskmanager.controller.CategoryController"
+      spacing="15" alignment="CENTER"
+      style="-fx-background-color: #FFE0B2;">
+
+    <Label text="Manage Categories" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: black;"/>
+
+    <!-- Input elements and buttons -->
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Category Name:" style="-fx-font-size: 16px; -fx-text-fill: black;"/>
+
+        <TextField fx:id="categoryField" promptText="Enter category name"
+                   style="-fx-padding: 10; -fx-font-size: 14px; -fx-background-color: #f8c96d; -fx-border-color: #FFA500; -fx-border-radius: 5;"
+                   maxWidth="200" maxHeight="400"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="addButton" text="Add Category" onAction="#addCategory"
+                    style="-fx-background-color: #f8bd66; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="updateButton" text="Update Category" onAction="#updateCategory"
+                    style="-fx-background-color: #FFB74D; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="deleteButton" text="Delete Category" onAction="#deleteCategory"
+                    style="-fx-background-color: #FFA000; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+    <!-- Tables to show to the user -->
+    <TableView fx:id="categoryTable" prefHeight="300" styleClass="table-view"
+               maxWidth="400" maxHeight="200">
+        <columns>
+            <TableColumn fx:id="categoryIDColumn" text="Category ID" prefWidth="98"/>
+            <TableColumn fx:id="nameColumn" text="Category Name" prefWidth="300"/>
+        </columns>
+    </TableView>
+
+</VBox>

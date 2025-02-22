@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.taskmanager.taskmanager.controller.PriorityController"
+      spacing="15" alignment="CENTER"
+      style="-fx-background-color: #C8E6C9;"> <!-- Set background color to light green -->
+
+    <Label text="Manage Priorities" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: black;"/>
+
+    <!-- Input elements and buttons -->
+    <VBox spacing="10" alignment="CENTER">
+
+        <Label text="Priority Level:" style="-fx-font-size: 16px; -fx-text-fill: black;"/>
+
+        <TextField fx:id="priorityField" promptText="Enter priority level"
+                   style="-fx-padding: 10; -fx-font-size: 14px; -fx-background-color: #8edd8f; -fx-border-color: #388E3C; -fx-border-radius: 5;"
+                   maxWidth="200"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="addButton" text="Add Priority" onAction="#addPriority"
+                    style="-fx-background-color: #81C784; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="updateButton" text="Update Priority" onAction="#updatePriority"
+                    style="-fx-background-color: #66BB6A; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button fx:id="deleteButton" text="Delete Priority" onAction="#deletePriority"
+                    style="-fx-background-color: #388E3C; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+    <!-- Table that shows the priorities to the user -->
+    <TableView fx:id="priorityTable" prefHeight="300" styleClass="table-view"
+               maxWidth="400" maxHeight="400">
+        <columns>
+            <TableColumn fx:id="priorityIDColumn" text="Priority ID" prefWidth="98"/>
+            <TableColumn fx:id="levelColumn" text="Priority Level" prefWidth="300"/>
+        </columns>
+    </TableView>
+
+</VBox>

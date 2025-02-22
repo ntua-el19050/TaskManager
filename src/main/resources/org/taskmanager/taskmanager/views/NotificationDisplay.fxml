@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<!-- Start the FXML file by setting its elements origin, its controller and the background and basic elements -->
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.taskmanager.taskmanager.controller.NotificationDisplayController"
+      style="-fx-background-color: #E6F7FF; -fx-padding: 10;">
+
+    <Label text="Notifications" style="-fx-font-size: 18px; -fx-text-fill: #004080; -fx-font-weight: bold;"/>
+
+    <!-- Show the notification information to the user. -->
+    <ListView fx:id="notificationListView" prefHeight="200.0" prefWidth="300.0"
+              style="-fx-background-color: #CCEBFF; -fx-border-color: #A4D7E1; -fx-border-width: 2;"/>
+
+    <Button text="Ok" onAction="#onClose"
+            style="-fx-background-color: #66B3FF; -fx-text-fill: black; -fx-font-weight: bold; -fx-padding: 5 10;"/>
+</VBox>
