@@ -30,9 +30,9 @@
         <ComboBox fx:id="stateComboBox" promptText="State" style="-fx-background-color: #F3E5F5;"/>
 
         <HBox spacing="10" alignment="CENTER">
-            <Button fx:id="addButton" text="Add Task" onAction="#addTask" style="-fx-background-color: #BA68C8; -fx-text-fill: white;"/>
-            <Button fx:id="updateButton" text="Update Task" onAction="#updateTask" style="-fx-background-color: #9C27B0; -fx-text-fill: white;"/>
-            <Button fx:id="deleteButton" text="Delete Task" onAction="#deleteTask" style="-fx-background-color: #7B1FA2; -fx-text-fill: white;"/>
+            <Button text="Add Task" onAction="#addTask" style="-fx-background-color: #BA68C8; -fx-text-fill: white;"/>
+            <Button text="Update Task" onAction="#updateTask" style="-fx-background-color: #9C27B0; -fx-text-fill: white;"/>
+            <Button text="Delete Task" onAction="#deleteTask" style="-fx-background-color: #7B1FA2; -fx-text-fill: white;"/>
         </HBox>
 
     </VBox>
@@ -42,12 +42,12 @@
                style="-fx-background-color: #E1BEE7; -fx-border-color: #BA68C8;"
                maxWidth="1000" maxHeight="400">
         <columns>
-            <TableColumn fx:id="taskIDColumn" text="Task ID" prefWidth="90" style="-fx-text-fill: #4A148C;"/>
-            <TableColumn fx:id="nameColumn" text="Task Name" prefWidth="150" style="-fx-text-fill: #4A148C;"/>
+            <TableColumn fx:id="taskIDColumn" text="Task ID" prefWidth="75" style="-fx-text-fill: #4A148C;"/>
+            <TableColumn fx:id="nameColumn" text="Task Name" prefWidth="149" style="-fx-text-fill: #4A148C;"/>
             <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200" style="-fx-text-fill: #4A148C;"/>
-            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="108" style="-fx-text-fill: #4A148C;"/>
+            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="115" style="-fx-text-fill: #4A148C;"/>
             <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="85" style="-fx-text-fill: #4A148C;"/>
-            <TableColumn fx:id="deadlineColumn" text="Due Date" prefWidth="80" style="-fx-text-fill: #4A148C;"/>
+            <TableColumn fx:id="deadlineColumn" text="Deadline" prefWidth="79" style="-fx-text-fill: #4A148C;"/>
             <TableColumn fx:id="actionsColumn" text="Notifications" style="-fx-text-fill: #4A148C;"/>
             <TableColumn fx:id="stateColumn" text="State" prefWidth="108" style="-fx-text-fill: #4A148C;"/>
         </columns>

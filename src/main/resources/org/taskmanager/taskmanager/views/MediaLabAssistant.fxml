@@ -21,13 +21,13 @@
     <!-- Button Section, help with opening the different management pages of the application -->
     <HBox spacing="10" alignment="CENTER"
           style="-fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;">
-        <Button fx:id="ManageTasksButton" text="Manage Tasks" onAction="#goToTasksWindow"
+        <Button text="Manage Tasks" onAction="#goToTasksWindow"
                 style="-fx-background-color: #8E44AD; -fx-text-fill: white; -fx-font-weight: bold;"/>
-        <Button fx:id="ManageCategoriesButton" text="Manage Categories" onAction="#goToCategoriesWindow"
+        <Button text="Manage Categories" onAction="#goToCategoriesWindow"
                 style="-fx-background-color: #E67E22; -fx-text-fill: white; -fx-font-weight: bold;"/>
-        <Button fx:id="ManagePrioritiesButton" text="Manage Priorities" onAction="#goToPrioritiesWindow"
+        <Button text="Manage Priorities" onAction="#goToPrioritiesWindow"
                 style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-weight: bold;"/>
-        <Button fx:id="searchButton" text="Search" onAction="#goToSearchWindow"
+        <Button text="Search" onAction="#goToSearchWindow"
                 style="-fx-background-color: #dc95ef; -fx-text-fill: white; -fx-font-weight: bold;"/>
     </HBox>
 
@@ -42,7 +42,7 @@
                 <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
                 <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100"/>
                 <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="87"/>
-                <TableColumn fx:id="deadlineColumn" text="Due Date" prefWidth="80"/>
+                <TableColumn fx:id="deadlineColumn" text="Deadline" prefWidth="79"/>
                 <TableColumn fx:id="notificationNumberColumn" text="Notification Count" prefWidth="140"/>
                 <TableColumn fx:id="stateColumn" text="State" prefWidth="108"/>
             </columns>
